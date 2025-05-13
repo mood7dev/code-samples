@@ -28,7 +28,7 @@
 
       body {
         margin: 0;
-        background-color: #ffeff5;
+        background-color: #fff;
       }
 
       #player-container {
@@ -79,7 +79,7 @@
         right: 15px;
         left: 15px;
         padding: 13px 22px 10px 184px;
-        background-color: #fff7f7;
+        background-color: #b3d9a5;
         border-radius: 15px 15px 0 0;
         transition: 0.3s ease top;
         z-index: 1;
@@ -90,13 +90,13 @@
       }
 
       #album-name {
-        color: #54576f;
+        color: #fff;
         font-size: 17px;
         font-weight: bold;
       }
 
       #track-name {
-        color: #acaebd;
+        color: #fffdd1;
         font-size: 13px;
         margin: 2px 0 13px 0;
       }
@@ -126,7 +126,7 @@
 
       #track-time.active #current-time,
       #track-time.active #track-length {
-        color: #f86d92;
+        color: #fff;
         background-color: transparent;
       }
 
@@ -138,7 +138,7 @@
       }
 
       #seek-bar-container {
-        background-color: #ffe8ee;
+        background-color: #fffdd1;
         cursor: pointer;
       }
 
@@ -174,7 +174,7 @@
         bottom: 0;
         left: 0;
         width: 0;
-        background-color: #fd6d94;
+        background-color: #ffeab0;
         transition: 0.2s ease width;
         z-index: 1;
       }
@@ -314,7 +314,7 @@
 
       .button i {
         display: block;
-        color: #d6dee7;
+        color: #b3d9a5;
         font-size: 26px;
         text-align: center;
         line-height: 1;
@@ -326,11 +326,11 @@
       }
 
       .button:hover {
-        background-color: #d6d6de;
+        background-color: #b3d9a5;
       }
 
       .button:hover i {
-        color: #fff;
+        color: #ffeab0;
       }
     </style>
   </head>
@@ -354,27 +354,11 @@
         </div>
         <div id="player-content">
           <div id="album-art">
-            <img
-              src="https://singhimalaya.github.io/Codepen/assets/img/album-arts/1.jpg"
-              class="active"
-              id="_1"
-            />
-            <img
-              src="https://singhimalaya.github.io/Codepen/assets/img/album-arts/2.jpg"
-              id="_2"
-            />
-            <img
-              src="https://singhimalaya.github.io/Codepen/assets/img/album-arts/3.jpg"
-              id="_3"
-            />
-            <img
-              src="https://singhimalaya.github.io/Codepen/assets/img/album-arts/4.jpg"
-              id="_4"
-            />
-            <img
-              src="https://singhimalaya.github.io/Codepen/assets/img/album-arts/5.jpg"
-              id="_5"
-            />
+            <img src="images/yellowCD.jpg" class="active" id="_1" />
+            <img src="images/greenCD.jpg" id="_2" />
+            <img src="images/jobCD.jpg" id="_3" />
+            <img src="images/homeCD.jpg" id="_4" />
+            <img src="images/pixelCD.jpg" id="_5" />
             <div id="buffer-box">Buffering ...</div>
           </div>
           <div id="player-controls">
@@ -466,6 +450,13 @@
               checkBuffering();
               i.attr("class", "fas fa-pause");
               audio.play();
+              audio.addEventListener(
+                "ended",
+                function () {
+                  document.getElementById("play-next").click();
+                },
+                false
+              );
             } else {
               playerTrack.removeClass("active");
               albumArt.removeClass("active");
