@@ -183,8 +183,9 @@
         position: relative;
         height: 100%;
         background-color: #fff;
-        box-shadow: 0 30px 80px #bbb;
+        box-shadow: 0 10px 5px rgba(0, 0, 0, 0.1); /* 그림자 약하게 */
         border-radius: 15px;
+        border: 1px solid #e0e0e0; /* 테두리 색상을 더 부드럽게, 두께는 1px */
         z-index: 2;
       }
 
@@ -196,14 +197,14 @@
         margin-left: 40px;
         transform: rotateZ(0);
         transition: 0.3s ease all;
-        box-shadow: 0 0 0 10px #fff;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 그림자 약하게 */
         border-radius: 50%;
         overflow: hidden;
       }
 
       #album-art.active {
         top: -60px;
-        box-shadow: 0 0 0 4px #fff7f7, 0 30px 50px -15px #afb7c1;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 그림자 약하게 */
       }
 
       #album-art:before {
